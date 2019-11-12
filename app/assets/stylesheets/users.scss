@@ -33,3 +33,12 @@
     }
   }
 }
+
+.gig__title {
+  margin: 20px 0;
+  font-size: 20px;
+  &__lists {
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+}
