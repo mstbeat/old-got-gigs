@@ -1,0 +1,12 @@
+.body
+  .profile.wrapper
+    .row
+      .col-md-4.text-center
+        - if @user.image?
+          = image_tag @user.image.url
+      .col-md-8
+        .row
+          %h2
+            = @user.name
+          - if @user == current_user
+            = link_to "プロフィールを編集", edit_user_path(current_user), class: "btn btn-primary"
