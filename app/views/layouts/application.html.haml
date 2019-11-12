@@ -22,6 +22,9 @@
       .header__left
         = link_to "got gigs?", root_path, method: :get
       .header__right
+        .header__right--gig
+          -if user_signed_in?
+            = link_to "got gigs?", new_gig_path, class: "btn btn-primary"
         .header__right--userName
           - if user_signed_in?
             = link_to current_user.name, user_path(current_user)
@@ -36,4 +39,4 @@
     = yield
 
     .footer
-      ©got gigs?
+      ©got gigs? 2019

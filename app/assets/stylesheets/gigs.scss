@@ -2,6 +2,7 @@
   background-color: #fafafa;
   font-size: 14px;
   color: #262626;
+  padding-top: 75px;
   .wrapper {
     display: flex;
     flex-direction: column;
@@ -39,8 +40,24 @@
               margin-right: 20px;
             }
           }
+          &--user a {
+            text-decoration: none;
+            color: #262626;
+          }
         }
       }
     }
+  }
+}
+
+.container__gig {
+  display: flex;
+  &__left{
+    .btn-primary {
+      margin-left: 10px;
+    }
+  }
+  &__right {
+    margin-left: 100px;
   }
 }
