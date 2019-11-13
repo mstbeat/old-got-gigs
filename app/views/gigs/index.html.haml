@@ -15,7 +15,6 @@
             .main__contents__content--need
               .main__contents__content--need--part
                 = gig.parts.first.name
-              .btn.btn-primary
-                応募
+                = link_to "エントリー", gig_entries_path(gig), class: "btn btn-primary"
             .main__contents__content--user
               投稿者：#{gig.user.name}

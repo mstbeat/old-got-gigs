@@ -18,8 +18,7 @@
         .field
           募集パート：
           = @gig.parts.first.name
-          .btn.btn-primary
-            応募
+          = link_to "エントリー", gig_entries_path(@gig), class: "btn btn-primary"
         .field
           投稿者：
           = link_to @gig.user.name, user_path(@gig.user)

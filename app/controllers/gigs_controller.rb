@@ -3,7 +3,7 @@ class GigsController < ApplicationController
   before_action :set_gig, only: [:show, :destroy]
 
   def index
-    @gigs = Gig.limit(20).includes(:parts, :user).order('created_at DESC')
+    @gigs = Gig.limit(30).includes(:parts, :user).order('created_at DESC')
   end
 
   def new

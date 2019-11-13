@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_12_092335) do
+ActiveRecord::Schema.define(version: 2019_11_12_114400) do
+
+  create_table "entries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "content"
+    t.bigint "user_id", null: false
+    t.bigint "gig_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["gig_id"], name: "index_entries_on_gig_id"
+    t.index ["user_id"], name: "index_entries_on_user_id"
+  end
 
   create_table "gigs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -47,6 +57,8 @@ ActiveRecord::Schema.define(version: 2019_11_12_092335) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "entries", "gigs"
+  add_foreign_key "entries", "users"
   add_foreign_key "gigs", "users"
   add_foreign_key "parts", "gigs"
 end

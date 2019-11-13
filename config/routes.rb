@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   resources :users, only: [:edit, :update, :show]
   resources :gigs, only: [:new, :create, :show, :destroy] do
     resources :parts, only: [:create]
+    resources :entries, only: [:index, :create]
   end
 end
